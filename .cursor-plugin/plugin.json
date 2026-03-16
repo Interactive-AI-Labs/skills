@@ -1,0 +1,25 @@
+{
+  "name": "interactiveai",
+  "displayName": "InteractiveAI",
+  "version": "1.0.0",
+  "description": "Skills for working with InteractiveAI",
+  "author": {
+    "name": "InteractiveAI",
+    "email": "support@interactive.ai"
+  },
+  "homepage": "https://interactive.ai",
+  "repository": "https://github.com/Interactive-AI-Labs/skills",
+  "license": "MIT",
+  "keywords": [
+    "interactiveai",
+    "llm",
+    "observability",
+    "tracing",
+    "prompt-management",
+    "evaluation",
+    "structured-prompts"
+  ],
+  "category": "developer-tools",
+  "logo": "assets/logo.png",
+  "skills": "./skills/"
+}
