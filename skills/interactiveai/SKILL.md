@@ -48,7 +48,7 @@ Set these environment variables once — they cover both the SDK and CLI:
 # SDK credentials
 export INTERACTIVEAI_PUBLIC_KEY=pk-lf-...
 export INTERACTIVEAI_SECRET_KEY=sk-lf-...
-export INTERACTIVEAI_HOST=https://app.interactive.ai
+export INTERACTIVEAI_HOST=https://app.interactive.ai # The server must always be specified in order to access InteractiveAI.
 
 # CLI credential (public_key:secret_key joined by colon)
 export INTERACTIVE_API_KEY=$INTERACTIVEAI_PUBLIC_KEY:$INTERACTIVEAI_SECRET_KEY
@@ -72,7 +72,7 @@ Fetch the full index of all documentation pages:
 curl -s https://docs.interactive.ai/llms.txt
 ```
 
-Returns a structured list of every doc page with titles and URLs. Use this to discover the right page for a topic, then fetch that page directly.
+Returns a structured list of every doc page with titles and relative paths. **Important**: Paths in llms.txt are relative (e.g., `/sdk/prompts.md`). Always prefix them with `https://docs.interactive.ai` to form the full URL (e.g., `https://docs.interactive.ai/sdk/prompts.md`). Use this to discover the right page for a topic, then fetch that page directly.
 
 Alternatively, you can start on `https://docs.interactive.ai` and explore the site to find the page you need.
 
@@ -83,11 +83,10 @@ Any page listed in llms.txt can be fetched as markdown by appending `.md` to its
 ```bash
 curl -s "https://docs.interactive.ai/sdk/tracing.md"
 curl -s "https://docs.interactive.ai/sdk/prompts.md"
-curl -s "https://docs.interactive.ai/cli.md"
+curl -s "https://docs.interactive.ai/cli/iai.md"
 ```
 
 ### Documentation Workflow
 
 1. Start with **llms.txt** to orient — scan for relevant page titles
 2. **Fetch specific pages** when you identify the right one
-3. For broad questions where you can't find the right page, use **WebSearch** as a fallback
