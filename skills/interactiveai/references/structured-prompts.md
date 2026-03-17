@@ -21,40 +21,6 @@ InteractiveAI extends standard text/chat prompts with five structured types. Eac
 
 General prompts SDK (get, list, create, delete, cache): https://docs.interactive.ai/sdk/prompts.md
 
-## Quick Reference
+## Key Rule
 
-All structured types are created via `interactive.create_prompt()` with `type=` set to the type name. Content is passed as a YAML or JSON string in the `prompt=` parameter.
-
-All structured types share: `.name`, `.version`, `.labels`, `.tags`, `.config`, `.is_fallback`, `.raw_content`, `.compile()`.
-
-### Reading
-
-```python
-prompt = interactive.get_prompt("name", type="policy", label="production")
-
-# Structured types expose typed accessors
-for entry in prompt.entries:
-    print(entry)  # PolicyEntry, VariableEntry, GlossaryEntry, or MacroEntry
-
-# Routines have specific properties
-routine = interactive.get_prompt("name", type="routine", label="production")
-print(routine.title, routine.steps, routine.conditions)
-```
-
-### Creating
-
-Always fetch the doc page for the type first to get the exact schema. Then:
-
-```python
-interactive.create_prompt(
-    name="my-prompt",
-    prompt=content_string,  # YAML or JSON matching the type's schema
-    type="policy",          # or routine, variable, glossary, macro
-    labels=["production"],
-    commit_message="description of change"
-)
-```
-
-### Key Rule
-
-**Do NOT guess schemas.** Each type has specific required fields (e.g., policies need `id`, `criticality`, `action`; variables need `name`, `type`, `default_value`). Fetch the doc page for the type before creating content.
+**Do NOT guess schemas or SDK methods.** Each type has dedicated SDK clients and specific required fields. Always fetch the doc page for the type before reading or creating structured prompts.

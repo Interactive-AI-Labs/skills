@@ -1,12 +1,12 @@
 # InteractiveAI Skills
 
-[Agent Skills](https://github.com/anthropics/skills) that teach AI coding assistants (Claude Code, Cursor, etc.) how to work with [InteractiveAI](https://interactive.ai) — the AI observability platform for tracing, prompt management, evaluation, and deployment.
+[Agent Skills](https://github.com/anthropics/skills) that teach AI coding assistants (Claude Code, Cursor, etc.) how to work with [InteractiveAI](https://interactive.ai).
 
 ## Skills
 
-| Skill                                                           | Description                                                                                        |
-| --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| [interactiveai](./skills/interactiveai)                         | Main skill to work with InteractiveAI. Manage platform resources via the iai CLI, instrument applications with tracing, migrate prompts, and look up documentation. |
+| Skill                                   | Description                                                                                                                                                         |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [interactiveai](./skills/interactiveai) | Main skill to work with InteractiveAI. Manage platform resources via the iai CLI, instrument applications with tracing, migrate prompts, and look up documentation. |
 
 ## Installation
 
