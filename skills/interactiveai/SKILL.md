@@ -12,7 +12,7 @@ This skill helps you use InteractiveAI effectively across all common workflows: 
 Follow these principles for ALL InteractiveAI work:
 
 1. **Documentation First**: NEVER implement based on memory. Always fetch current docs before writing code (InteractiveAI updates frequently). See the section below on how to access documentation.
-2. **CLI for Platform Operations**: Use the `iai` CLI for managing services, secrets, traces, vector stores, and other platform resources. See the section below on how to use the CLI.
+2. **CLI for Platform Operations**: Use the `iai` CLI for managing services, secrets and querying/modifying InteractiveAI data.
 3. **Best Practices by Use Case**: Check the relevant reference file below for use-case-specific guidelines before implementing.
 4. **Use latest InteractiveAI versions**: Unless the user specified otherwise or there's a good reason, always use the latest version of InteractiveAI SDKs/APIs.
 
