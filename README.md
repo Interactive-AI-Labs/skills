@@ -26,12 +26,6 @@ Install via the [skills CLI](https://github.com/anthropics/skills):
 npx skills add Interactive-AI-Labs/skills --skill "interactiveai"
 ```
 
-Private repo (our case):
-
-```bash
-npx skills add git@github.com:Interactive-AI-Labs/skills.git --skill "interactiveai"
-```
-
 ### Manual symlink
 
 Clone this repo and symlink the skill into your agent's skills directory:
