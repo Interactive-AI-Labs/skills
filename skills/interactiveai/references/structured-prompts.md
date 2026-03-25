@@ -13,7 +13,7 @@ InteractiveAI extends standard text/chat prompts with five structured types. Eac
 
 | Type | SDK Client | Doc Page |
 |------|-----------|----------|
-| `routine` | RoutinePromptClient | https://docs.interactive.ai/sdk/policies.md |
+| `routine` | RoutinePromptClient | https://docs.interactive.ai/sdk/routines.md |
 | `policy` | PolicyPromptClient | https://docs.interactive.ai/sdk/policies.md |
 | `variable` | VariablePromptClient | https://docs.interactive.ai/sdk/variables.md |
 | `glossary` | GlossaryPromptClient | https://docs.interactive.ai/sdk/glossary.md |
