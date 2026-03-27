@@ -167,14 +167,14 @@ Use `interactive.create_prompt()` with:
 - `name`: Your chosen name
 - `prompt`: Template text (or message array for chat, or YAML/JSON for structured types)
 - `type`: `"text"`, `"chat"`, `"routine"`, `"policy"`, `"variable"`, `"glossary"`, or `"macro"`
-- `labels`: `["production"]` (makes them immediately active)
+- `labels`: only include `["production"]` if the user explicitly confirms the new version should go live immediately
 - `config`: Optional model settings
 
 **For structured types:** fetch the doc page for the type first to get the required schema. See [references/structured-prompts.md](structured-prompts.md).
 
 **Labeling strategy:**
-- `production` → All migrated prompts
-- `staging` → Add later for testing
+- `production` → Use only after explicit approval to make the new version live
+- `staging` → Preferred for pre-production verification when a non-live label is needed
 - `latest` → Auto-applied by InteractiveAI (system-reserved)
 
 For full API: fetch https://docs.interactive.ai/sdk/prompts
@@ -200,7 +200,7 @@ compiled = prompt.compile(var1=value1, var2=value2)
 
 For structured types (routine, policy, variable, glossary, macro), **fetch the doc page for the specific type before creating content** — each has a distinct schema with required fields.
 
-See [references/structured-prompts.md](structured-prompts.md) for the type-to-doc mapping and usage patterns.
+See [references/structured-prompts.md](structured-prompts.md) for the type-to-doc mapping, schema workflow, and exact-format preservation rules.
 
 ## Step 7: Link Prompts to Traces
 
@@ -236,7 +236,7 @@ with interactive.start_as_current_observation(name="llm-call", as_type="generati
 
 ### Checklist
 
-- [ ] All prompts created with `production` label
+- [ ] `production` label only applied after explicit user approval
 - [ ] Code fetches with `label="production"` and correct `type=`
 - [ ] Variables compile without errors
 - [ ] Subprompts resolve correctly
