@@ -14,8 +14,9 @@ Follow these principles for ALL InteractiveAI work:
 1. **Documentation First**: NEVER implement from memory. Always fetch current docs before writing code. See the documentation section below.
 2. **CLI and Schema Discovery First**: Before changing InteractiveAI resources, discover the exact command shape with `iai --help`, `iai <command> --help`, and `iai <command> <subcommand> --help`. For structured prompts, use `iai <type> schema` when available.
 3. **Best Practices by Use Case**: Check the relevant reference file below before implementing.
-4. **Explicit Confirmation for Live Changes**: Scaling services or replicas, or assigning the `production` label to a prompt version, changes live behavior. Do not do either unless the user explicitly confirms.
-5. **Use Latest InteractiveAI Versions**: Unless the user specified otherwise or there is a good reason not to, use the latest InteractiveAI SDK and API versions.
+4. **Default to Latest Prompt Fetches**: When reading prompts or wiring prompt fetches, use the `latest` version unless the user explicitly asks for a different label or a fixed version.
+5. **Explicit Confirmation for Live Changes**: Scaling services or replicas, or assigning the `production` label to a prompt version, changes live behavior. Do not do either unless the user explicitly confirms.
+6. **Use Latest InteractiveAI Versions**: Unless the user specified otherwise or there is a good reason not to, use the latest InteractiveAI SDK and API versions.
 
 ## Use case specific references
 
