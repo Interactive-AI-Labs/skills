@@ -168,7 +168,7 @@ url = interactive.get_trace_url()
 When using InteractiveAI prompt management, link prompts to observations for version tracking:
 
 ```python
-prompt = interactive.get_prompt("my-prompt", label="production")
+prompt = interactive.get_prompt("my-prompt", label="latest")
 compiled = prompt.compile(variable="value")
 
 with interactive.start_as_current_observation(name="llm-call", as_type="generation") as obs:
@@ -176,6 +176,8 @@ with interactive.start_as_current_observation(name="llm-call", as_type="generati
     interactive.update_current_span(prompt=prompt)
     # ... make LLM call with compiled prompt ...
 ```
+
+Use `label="latest"` by default when fetching prompts unless the user explicitly asks for another label or a fixed version.
 
 ### Scoring
 

@@ -35,4 +35,19 @@ iai <command> --help                   # list actions for a command
 iai <command> <subcommand> --help      # show args/options for an action
 ```
 
+For structured prompt work, go one step further before editing:
+
+```bash
+iai routines --help
+iai routines create --help
+iai routines update --help
+iai routines schema                    # when the type exposes a schema command
+```
+
+If a typed prompt command does not expose `schema`, fetch the type docs and inspect existing prompt content in the same project before writing or updating anything. Treat the observed project format as authoritative and preserve it exactly.
+
 For non-default hosts, always pass `--hostname $INTERACTIVEAI_HOST`.
+
+## Promotion Guardrail
+
+Prompt versions get `latest` automatically when created or updated. Do not add `--labels production` unless the user explicitly confirms they want the new version promoted immediately.
